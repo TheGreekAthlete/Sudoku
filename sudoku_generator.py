@@ -33,6 +33,7 @@ class SudokuGenerator:
     Return: list[list]
     '''
     def get_board(self):
+        return self.board
         pass
 
     '''
@@ -43,6 +44,8 @@ class SudokuGenerator:
     Return: None
     '''
     def print_board(self):
+        for row in self.board:
+            print(" ".join(map(str, row)))
         pass
 
     '''
@@ -56,6 +59,10 @@ class SudokuGenerator:
     Return: boolean
     '''
     def valid_in_row(self, row, num):
+        for col in range(self.row_length):
+            if self.board[row][col] == num:
+                return False
+        return True
         pass
 
     '''
@@ -69,6 +76,10 @@ class SudokuGenerator:
     Return: boolean
     '''
     def valid_in_col(self, col, num):
+         for row in range(self.row_length):
+            if self.board[row][col] == num:
+                return False
+        return True
         pass
 
     '''
